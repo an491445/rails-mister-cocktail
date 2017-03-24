@@ -1,4 +1,5 @@
 <h1><%= @cocktail.name %></h1>
+<%= cl_image_tag @cocktail.image, height: 300, width: 400, crop: :fill if @cocktail.image? %>
 <p><%= @doses.empty? ? "No ingredients yet" : "Ingredients:" %></p>
 <ul>
   <% @doses.each do |dose| %>
