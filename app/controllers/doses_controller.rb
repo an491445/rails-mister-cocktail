@@ -3,6 +3,9 @@ class DosesController < ApplicationController
     @dose = Dose.new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredients = Ingredient.all
+    @ingredients = @ingredients.reject do |ingredient|
+      @cocktail.ingredients.include? ingredient
+    end
   end
 
   def create

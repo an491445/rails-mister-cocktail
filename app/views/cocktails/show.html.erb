@@ -1,6 +1,9 @@
 <h1><%= @cocktail.name %></h1>
-<%= cl_image_tag @cocktail.image, height: 300, width: 400, crop: :fill if @cocktail.image? %>
-<p><%= @doses.empty? ? "No ingredients yet" : "Ingredients:" %></p>
+
+<div><%= cl_image_tag @cocktail.image, height: 300, width: 400, crop: :fill, class: "img-responsive" if @cocktail.image? %>
+</div>
+<h2>Ingredients</h2>
+<p><%= "No ingredients yet" if @doses.empty? %></p>
 <ul>
   <% @doses.each do |dose| %>
     <li><%= dose.ingredient.name %>: <%= dose.description %>
@@ -9,5 +12,6 @@
   <% end %>
 </ul>
 
-<p><%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %></p>
-<p><%= link_to "Back to index", cocktails_path %></p>
+<%= link_to new_cocktail_dose_path(@cocktail) do %>
+  <i class='fa fa-plus' aria-hidden='true'></i> Add an ingredient
+<% end %>
