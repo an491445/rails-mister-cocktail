@@ -1,10 +1,18 @@
 <h1>All cocktails</h1>
 
 <%= "No cocktails yet" if @cocktails.empty? %>
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
-
-<p><%= link_to "Create a new cocktail", new_cocktail_path %></p>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path cocktail.image, height: 300, width: 400, crop: :fill %>')">
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
