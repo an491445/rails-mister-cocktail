@@ -1,7 +1,12 @@
-<h1>All cocktails</h1>
-
-<%= "No cocktails yet" if @cocktails.empty? %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0.6) 0%, rgba(15, 94, 44, 0.6) 50%), url('<%= cl_image_path "pujyp9dnceq4epgppv79.jpg", height: 300, width: 400, crop: :fill %>');">
+  <div class="banner-content">
+    <h1>Rails Mister Cocktail</h1>
+    <p>Very cool, useful and smart</p>
+  </div>
+</div>
 <div class="container">
+  <h2>Cocktails</h2>
+  <%= "No cocktails yet" if @cocktails.empty? %>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">

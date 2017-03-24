@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Create new cocktail</h1>
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
@@ -5,3 +6,4 @@
   <%= f.input :image_cache, as: :hidden %>
   <%= f.button :submit %>
 <% end %>
+</div>

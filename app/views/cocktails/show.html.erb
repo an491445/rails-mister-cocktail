@@ -1,3 +1,4 @@
+<div class="container">
 <h1><%= @cocktail.name %></h1>
 
 <div><%= cl_image_tag @cocktail.image, height: 300, width: 400, crop: :fill, class: "img-responsive" if @cocktail.image? %>
@@ -15,3 +16,4 @@
 <%= link_to new_cocktail_dose_path(@cocktail) do %>
   <i class='fa fa-plus' aria-hidden='true'></i> Add an ingredient
 <% end %>
+</div>
